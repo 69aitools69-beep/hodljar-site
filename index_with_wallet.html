@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HODLJAR - Vânătoarea Comorii Crypto | Meme Coin cu Misiuni On-Chain</title>
+    <meta name="description" content="Descoperă HODLJAR - meme coin-ul cu vânătoare de comori crypto. Participă la misiuni on-chain, câștigă airdrops și colecționează NFT-uri rare.">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="HODLJAR - Crypto Treasure Hunt">
+    <meta property="og:description" content="Join the ultimate crypto treasure hunt! Gamified meme coin with on-chain missions, airdrops, and NFT artifacts.">
+    <meta property="og:image" content="https://user-gen-media-assets.s3.amazonaws.com/gpt4o_images/1596fdca-8ede-460b-ac94-09588a78700c.png">
+    <meta property="og:url" content="https://hodljar.com">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="HODLJAR - Crypto Treasure Hunt">
+    <meta name="twitter:description" content="Join the ultimate crypto treasure hunt! Gamified meme coin with on-chain missions, airdrops, and NFT artifacts.">
+    <meta name="twitter:image" content="https://user-gen-media-assets.s3.amazonaws.com/gpt4o_images/1596fdca-8ede-460b-ac94-09588a78700c.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://user-gen-media-assets.s3.amazonaws.com/gpt4o_images/0c16f1f3-42a7-481a-a796-97546f096f74.png">
+
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loadingScreen" class="loading-screen hidden">
+        <div class="loading-content">
+            <div class="spinner-large"></div>
+            <h3 data-translate="interactive-loading">Se încarcă...</h3>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand">
+                <img src="https://user-gen-media-assets.s3.amazonaws.com/gpt4o_images/0c16f1f3-42a7-481a-a796-97546f096f74.png" alt="HODLJAR" class="nav-logo">
+                <h1 class="nav-title">HODLJAR</h1>
+            </div>
+
+            <div class="nav-links">
+                <a href="#home" class="nav-link" data-translate="navigation-home">Acasă</a>
+                <a href="#about" class="nav-link" data-translate="navigation-about">Despre</a>
+                <a href="#tokenomics" class="nav-link" data-translate="navigation-tokenomics">Tokenomics</a>
+                <a href="#roadmap" class="nav-link" data-translate="navigation-roadmap">Roadmap</a>
+                <a href="#how-to-buy" class="nav-link" data-translate="navigation-howToBuy">Cum să Cumperi</a>
+                <a href="#community" class="nav-link" data-translate="navigation-community">Comunitate</a>
+            </div>
+
+            <div class="nav-actions">
+                <!-- Language Switcher -->
+                <div class="language-switcher">
+                    <button class="language-btn active" data-lang="ro">
+                        <span class="flag">🇷🇴</span>
+                        <span class="lang-code">RO</span>
+                    </button>
+                    <button class="language-btn" data-lang="en">
+                        <span class="flag">🇬🇧</span>
+                        <span class="lang-code">EN</span>
+                    </button>
+                    <button class="language-btn" data-lang="ru">
+                        <span class="flag">🇷🇺</span>
+                        <span class="lang-code">RU</span>
+                    </button>
+                </div>
+
+                <button class="btn-connect-wallet" data-translate="buttons-connectWallet">Conectează Wallet</button>
+
+                <!-- Social Icons -->
+                <div class="social-icons">
+                    <a href="https://t.me/hodljar" class="social-link" title="Telegram">📡</a>
+                    <a href="https://twitter.com/hodljar" class="social-link" title="Twitter/X">𝕏</a>
+                    <a href="https://discord.gg/hodljar" class="social-link" title="Discord">💬</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="mobile-menu-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-bg">
+                <div class="floating-icons">
+                    <span class="crypto-icon">₿</span>
+                    <span class="crypto-icon">Ξ</span>
+                    <span class="crypto-icon">💎</span>
+                    <span class="crypto-icon">🚀</span>
+                    <span class="crypto-icon">🏴‍☠️</span>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="hero-content">
+                    <div>
+                        <h1 class="hero-title" data-translate="hero-title">Vânătoarea Comorii Crypto</h1>
+                        <p class="hero-subtitle" data-translate="hero-subtitle">Descoperă comorile ascunse ale bull market-ului prin misiuni on-chain și puzzle-uri interactive</p>
+                        <p class="hero-description" data-translate="hero-description">HODLJAR nu este doar un meme coin - este o aventură gamificată unde fiecare deținător devine un explorator digital în căutarea comorilor crypto.</p>
+
+                        <div class="hero-actions">
+                            <button class="btn-primary" data-translate="buttons-startHunt">Începe Vânătoarea</button>
+                            <button class="btn-outline" data-translate="buttons-seeMap">Vezi Harta Comorii</button>
+                        </div>
+                    </div>
+
+                    <div>
+                        <img src="https://user-gen-media-assets.s3.amazonaws.com/gpt4o_images/0c16f1f3-42a7-481a-a796-97546f096f74.png" alt="HODLJAR Mascot" class="mascot-image">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about">
+            <div class="container">
+                <h2 class="section-title" data-translate="about-title">Ce este HODLJAR?</h2>
+                <p class="section-description" data-translate="about-subtitle">Un ecosistem gamificat de vânătoare de comori pe blockchain</p>
+
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <span class="feature-icon">🔍</span>
+                        <h3 data-translate="about-feature-1-title">Vânătoare On-Chain</h3>
+                        <p data-translate="about-feature-1-description">Rezolvă puzzle-uri complexe și participă la misiuni pentru a debloca airdrops și recompense exclusive</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <span class="feature-icon">💎</span>
+                        <h3 data-translate="about-feature-2-title">Proof of HODL</h3>
+                        <p data-translate="about-feature-2-description">Sistemul nostru recompensează loialitatea - cu cât ții mai mult, cu atât câștigi mai mult</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <span class="feature-icon">🏺</span>
+                        <h3 data-translate="about-feature-3-title">Artefacte NFT</h3>
+                        <p data-translate="about-feature-3-description">Colecționează NFT-uri rare care oferă boosturi, acces VIP și privilegii speciale în ecosistem</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tokenomics Section -->
+        <section id="tokenomics" class="tokenomics">
+            <div class="container">
+                <h2 class="section-title" data-translate="tokenomics-title">Tokenomics - Harta Comorii</h2>
+
+                <div class="tokenomics-content">
+                    <div class="token-details">
+                        <div class="token-stat">
+                            <span class="token-label" data-translate="tokenomics-token-symbol">Simbolul Token:</span>
+                            <span class="token-value">HJAR</span>
+                        </div>
+
+                        <div class="token-stat">
+                            <span class="token-label" data-translate="tokenomics-labels-totalSupply">Oferta Totală:</span>
+                            <span class="token-value">1,000,000,000</span>
+                        </div>
+
+                        <div class="token-stat">
+                            <span class="token-label" data-translate="tokenomics-labels-contractAddress">Adresa Contractului:</span>
+                            <span class="token-value contract-address" title="Click pentru a copia">0x1234...5678</span>
+                        </div>
+
+                        <div class="token-stat">
+                            <span class="token-label" data-translate="tokenomics-token-network">Rețeaua:</span>
+                            <span class="token-value">BSC & Ethereum</span>
+                        </div>
+
+                        <div class="token-burn">
+                            <span class="burn-label" data-translate="tokenomics-mechanism-burn">🔥 1% Burn la evenimente de raid</span>
+                            <br>
+                            <span class="burn-description" data-translate="tokenomics-mechanism-rewards">2% Redistribuire către holderi</span>
+                        </div>
+
+                        <div class="token-actions">
+                            <button class="btn btn--sm btn--primary" data-translate="tokenomics-labels-addToWallet">Adaugă în Wallet</button>
+                            <a href="https://bscscan.com/token/0x1234567890abcdef1234567890abcdef12345678" target="_blank" class="btn btn--sm btn--outline" data-translate="tokenomics-labels-viewOnExplorer">Vezi pe Explorer</a>
+                        </div>
+                    </div>
+
+                    <div class="chart-container">
+                        <canvas id="tokenomicsChart" width="400" height="400"></canvas>
+                    </div>
+                </div>
+
+                <div class="tokenomics-legend">
+                    <div class="legend-item">
+                        <span class="legend-color" style="background: #1FB8CD;"></span>
+                        <span data-translate="tokenomics-distribution-community">40% Community Rewards & Misiuni</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-color" style="background: #FFC185;"></span>
+                        <span data-translate="tokenomics-distribution-liquidity">30% Lichiditate & Listare Exchanges</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-color" style="background: #B4413C;"></span>
+                        <span data-translate="tokenomics-distribution-team">15% Echipa (blocat 12 luni)</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-color" style="background: #ECEBD5;"></span>
+                        <span data-translate="tokenomics-distribution-marketing">10% Marketing & Partnerships</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-color" style="background: #5D878F;"></span>
+                        <span data-translate="tokenomics-distribution-treasury">5% Trezorerie & Dezvoltare</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How to Buy Section -->
+        <section id="how-to-buy" class="how-to-buy">
+            <div class="container">
+                <h2 class="section-title" data-translate="howToBuy-title">Cum să Cumperi HJAR</h2>
+                <p class="section-description" data-translate="howToBuy-subtitle">Ghid pas cu pas pentru a te alătura vânătorilor</p>
+
+                <div class="steps-grid">
+                    <div class="step-card">
+                        <span class="step-number">1</span>
+                        <span class="step-icon">🔗</span>
+                        <h3 data-translate="howToBuy-step-1-title">Conectează Wallet-ul</h3>
+                        <p data-translate="howToBuy-step-1-description">Folosește MetaMask, Trust Wallet, WalletConnect sau alt wallet compatibil cu BSC/Ethereum</p>
+                        <button class="btn btn--sm btn--primary btn-connect-wallet" data-translate="howToBuy-step-1-action">Conectează Wallet</button>
+                    </div>
+
+                    <div class="step-card">
+                        <span class="step-number">2</span>
+                        <span class="step-icon">💰</span>
+                        <h3 data-translate="howToBuy-step-2-title">Obține BNB/ETH</h3>
+                        <p data-translate="howToBuy-step-2-description">Ai nevoie de crypto pentru comisioanele de gas și pentru schimbul în HJAR</p>
+                        <a href="https://www.binance.com/en/buy-BNB" target="_blank" class="btn btn--sm btn--outline" data-translate="howToBuy-step-2-action">Cumpără Crypto</a>
+                    </div>
+
+                    <div class="step-card">
+                        <span class="step-number">3</span>
+                        <span class="step-icon">🔄</span>
+                        <h3 data-translate="howToBuy-step-3-title">Swap pe DEX</h3>
+                        <p data-translate="howToBuy-step-3-description">Mergi pe PancakeSwap (BSC) sau Uniswap (ETH) și schimbă crypto pentru HJAR</p>
+                        <a href="https://pancakeswap.finance/swap" target="_blank" class="btn btn--sm btn--outline" data-translate="howToBuy-step-3-action">Deschide DEX</a>
+                    </div>
+
+                    <div class="step-card">
+                        <span class="step-number">4</span>
+                        <span class="step-icon">🎉</span>
+                        <h3 data-translate="howToBuy-step-4-title">Alătură-te Comunității</h3>
+                        <p data-translate="howToBuy-step-4-description">Intră pe canalele noastre pentru misiuni exclusive, airdrops și actualizări</p>
+                        <a href="#community" class="btn btn--sm btn--primary" data-translate="howToBuy-step-4-action">Alătură-te Acum</a>
+                    </div>
+                </div>
+
+                <div class="warnings-section">
+                    <h4 data-translate="howToBuy-warnings-title">Informații Importante</h4>
+                    <ul class="warnings-list">
+                        <li data-translate="howToBuy-warnings-slippage">Setează slippage la 5-12% pentru tranzacții reușite</li>
+                        <li data-translate="howToBuy-warnings-gas">Verifică comisioanele de gas înainte de confirmare</li>
+                        <li data-translate="howToBuy-warnings-scam">Verifică întotdeauna adresa contractului oficial</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Roadmap Section -->
+        <section id="roadmap" class="roadmap">
+            <div class="container">
+                <h2 class="section-title" data-translate="roadmap-title">Harta Viitorului</h2>
+                <p class="section-description" data-translate="roadmap-subtitle">Călătoria noastră către dominația meme coin</p>
+
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-icon">🚀</div>
+                        <div class="timeline-content">
+                            <h3>
+                                <span data-translate="roadmap-phase-1-title">Lansare & Primele Misiuni</span>
+                                <span class="timeline-date" data-translate="roadmap-phase-1-date">T4 2025</span>
+                                <span class="timeline-status status--success" data-translate="roadmap-statusLabels-inProgress">În Progres</span>
+                            </h3>
+                            <ul>
+                                <li data-translate="roadmap-phase-1-item-1">Lansare token HJAR pe BSC și Ethereum</li>
+                                <li data-translate="roadmap-phase-1-item-2">Prima hartă de comori și sistem de misiuni beta</li>
+                                <li data-translate="roadmap-phase-1-item-3">Comunitate de 10K membri și primii 1K holderi</li>
+                                <li data-translate="roadmap-phase-1-item-4">Listare pe DEX-uri majore și platforme tracking</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-icon">🏺</div>
+                        <div class="timeline-content">
+                            <h3>
+                                <span data-translate="roadmap-phase-2-title">NFT Artefacte & Partnerships</span>
+                                <span class="timeline-date" data-translate="roadmap-phase-2-date">T1 2026</span>
+                                <span class="timeline-status status--info" data-translate="roadmap-statusLabels-planned">Planificat</span>
+                            </h3>
+                            <ul>
+                                <li data-translate="roadmap-phase-2-item-1">Lansare marketplace NFT pentru artefacte</li>
+                                <li data-translate="roadmap-phase-2-item-2">Colecția de NFT-uri Genesis cu utilități</li>
+                                <li data-translate="roadmap-phase-2-item-3">Partnerships cu proiecte crypto și influenceri</li>
+                                <li data-translate="roadmap-phase-2-item-4">Bot social pentru Telegram cu gamificare</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-icon">📱</div>
+                        <div class="timeline-content">
+                            <h3>
+                                <span data-translate="roadmap-phase-3-title">Mobile App & Advanced Raids</span>
+                                <span class="timeline-date" data-translate="roadmap-phase-3-date">T2 2026</span>
+                                <span class="timeline-status status--info" data-translate="roadmap-statusLabels-planned">Planificat</span>
+                            </h3>
+                            <ul>
+                                <li data-translate="roadmap-phase-3-item-1">Aplicație mobilă iOS și Android</li>
+                                <li data-translate="roadmap-phase-3-item-2">Sistem avansat de raid-uri cross-chain</li>
+                                <li data-translate="roadmap-phase-3-item-3">Integrare cu layer 2 solutions</li>
+                                <li data-translate="roadmap-phase-3-item-4">Program de staking cu recompense APR</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-icon">🌐</div>
+                        <div class="timeline-content">
+                            <h3>
+                                <span data-translate="roadmap-phase-4-title">Cross-Chain & Global Expansion</span>
+                                <span class="timeline-date" data-translate="roadmap-phase-4-date">T3 2026</span>
+                                <span class="timeline-status status--warning" data-translate="roadmap-statusLabels-vision">Viziune</span>
+                            </h3>
+                            <ul>
+                                <li data-translate="roadmap-phase-4-item-1">Suport multi-blockchain (Polygon, Avalanche)</li>
+                                <li data-translate="roadmap-phase-4-item-2">Evenimente globale de vânătoare cu premii</li>
+                                <li data-translate="roadmap-phase-4-item-3">DAO governance complet descentralizat</li>
+                                <li data-translate="roadmap-phase-4-item-4">Expansiune în metaverse și GameFi</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Community Section -->
+        <section id="community" class="community">
+            <div class="container">
+                <h2 class="section-title" data-translate="community-title">Alătură-te Expedițiunii</h2>
+                <p class="section-description" data-translate="community-description">Peste 15.000 de vânători de comori s-au alăturat deja misiunii noastre. Fii parte din istoria crypto!</p>
+
+                <div class="community-stats">
+                    <div class="stat-card">
+                        <span class="stat-number" data-target="15420">0</span>
+                        <span class="stat-label" data-translate="community-stats-members">Membri Comunitate</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number" data-target="1247">0</span>
+                        <span class="stat-label" data-translate="community-stats-holders">Deținători Token</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number" data-target="89">0</span>
+                        <span class="stat-label" data-translate="community-stats-treasures">Comori Găsite</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number" data-target="2580000">0</span>
+                        <span class="stat-label" data-translate="community-stats-rewards">Recompense Distribuite</span>
+                    </div>
+                </div>
+
+                <div class="community-links">
+                    <a href="https://t.me/hodljar" target="_blank" class="community-link">
+                        <div class="community-icon">📡</div>
+                        <div class="community-info">
+                            <h3 data-translate="community-platforms-telegram-title">Telegram</h3>
+                            <span data-translate="community-platforms-telegram-description">Chat principal și anunțuri oficiale</span>
+                            <span class="member-count">12,400+ membri</span>
+                        </div>
+                    </a>
+
+                    <a href="https://discord.gg/hodljar" target="_blank" class="community-link">
+                        <div class="community-icon">💬</div>
+                        <div class="community-info">
+                            <h3 data-translate="community-platforms-discord-title">Discord</h3>
+                            <span data-translate="community-platforms-discord-description">Comunitatea gamers și evenimente</span>
+                            <span class="member-count">8,900+ membri</span>
+                        </div>
+                    </a>
+
+                    <a href="https://twitter.com/hodljar" target="_blank" class="community-link">
+                        <div class="community-icon">𝕏</div>
+                        <div class="community-info">
+                            <h3 data-translate="community-platforms-twitter-title">Twitter/X</h3>
+                            <span data-translate="community-platforms-twitter-description">Actualizări și meme-uri zilnice</span>
+                            <span class="member-count">15,200+ urmăritori</span>
+                        </div>
+                    </a>
+
+                    <a href="https://reddit.com/r/hodljar" target="_blank" class="community-link">
+                        <div class="community-icon">🔴</div>
+                        <div class="community-info">
+                            <h3 data-translate="community-platforms-reddit-title">Reddit</h3>
+                            <span data-translate="community-platforms-reddit-description">Discuții și analiza comunității</span>
+                            <span class="member-count">3,800+ membri</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="https://user-gen-media-assets.s3.amazonaws.com/gpt4o_images/0c16f1f3-42a7-481a-a796-97546f096f74.png" alt="HODLJAR" class="footer-logo">
+                    <h3>HODLJAR</h3>
+                    <p>Crypto treasure hunting redefined. Join the expedition and discover hidden blockchain treasures through gamified missions and interactive experiences.</p>
+                </div>
+
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h4>Project</h4>
+                        <a href="#about" data-translate="navigation-about">Despre</a>
+                        <a href="#tokenomics" data-translate="navigation-tokenomics">Tokenomics</a>
+                        <a href="#roadmap" data-translate="navigation-roadmap">Roadmap</a>
+                        <a href="#how-to-buy" data-translate="navigation-howToBuy">Cum să Cumperi</a>
+                    </div>
+
+                    <div class="footer-section">
+                        <h4>Community</h4>
+                        <a href="https://t.me/hodljar" target="_blank">Telegram</a>
+                        <a href="https://discord.gg/hodljar" target="_blank">Discord</a>
+                        <a href="https://twitter.com/hodljar" target="_blank">Twitter/X</a>
+                        <a href="https://reddit.com/r/hodljar" target="_blank">Reddit</a>
+                    </div>
+
+                    <div class="footer-section">
+                        <h4>Resources</h4>
+                        <a href="#" target="_blank" data-translate="footer-links-audit">Raport Audit</a>
+                        <a href="#" target="_blank" data-translate="footer-links-documentation">Documentație</a>
+                        <a href="#" target="_blank">Whitepaper</a>
+                        <a href="https://bscscan.com/token/0x1234567890abcdef1234567890abcdef12345678" target="_blank">Contract</a>
+                    </div>
+
+                    <div class="footer-section">
+                        <h4>Legal</h4>
+                        <a href="#" data-translate="footer-links-terms">Termeni și Condiții</a>
+                        <a href="#" data-translate="footer-links-privacy">Politica de Confidențialitate</a>
+                        <a href="#" data-translate="footer-links-legal">Legal</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p data-translate="footer-copyright">© 2025 HODLJAR. Toate drepturile rezervate.</p>
+                <p class="disclaimer" data-translate="footer-disclaimer">Investițiile în criptomonede implică riscuri semnificative. Prețurile pot fluctua dramatic și poți pierde toți banii investiți. Investește doar ce îți permiți să pierzi și consultă un consilier financiar înainte de orice decizie de investiție.</p>
+                <button class="back-to-top" data-translate="footer-backToTop">Înapoi Sus</button>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Wallet Connection Modal -->
+    <div id="walletModal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 data-translate="wallet-title">Conectează Wallet-ul</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p class="modal-subtitle" data-translate="wallet-subtitle">Alege wallet-ul tău preferat</p>
+
+                <div class="wallet-options">
+                    <div class="wallet-option" data-wallet="metamask">
+                        <img src="https://raw.githubusercontent.com/MetaMask/brand-resources/master/SVG/metamask-fox.svg" alt="MetaMask">
+                        <div class="wallet-info">
+                            <span class="wallet-name" data-translate="wallet-option-1-name">MetaMask</span>
+                            <span class="wallet-desc" data-translate="wallet-option-1-description">Wallet-ul cel mai popular pentru DeFi</span>
+                            <span class="wallet-status" data-translate="wallet-option-1-status">Recomandat</span>
+                        </div>
+                    </div>
+
+                    <div class="wallet-option" data-wallet="trust">
+                        <img src="https://trustwallet.com/assets/images/media/assets/trust_platform.svg" alt="Trust Wallet">
+                        <div class="wallet-info">
+                            <span class="wallet-name" data-translate="wallet-option-2-name">Trust Wallet</span>
+                            <span class="wallet-desc" data-translate="wallet-option-2-description">Wallet mobil cu suport multi-chain</span>
+                            <span class="wallet-status" data-translate="wallet-option-2-status">Popular</span>
+                        </div>
+                    </div>
+
+                    <div class="wallet-option" data-wallet="walletconnect">
+                        <img src="https://walletconnect.com/walletconnect-logo.svg" alt="WalletConnect">
+                        <div class="wallet-info">
+                            <span class="wallet-name" data-translate="wallet-option-3-name">WalletConnect</span>
+                            <span class="wallet-desc" data-translate="wallet-option-3-description">Conectează orice wallet compatibil</span>
+                            <span class="wallet-status" data-translate="wallet-option-3-status">Universal</span>
+                        </div>
+                    </div>
+
+                    <div class="wallet-option" data-wallet="coinbase">
+                        <img src="https://images.ctfassets.net/q5ulk4bp65r7/3TBS4oVkD1ghowTqVQJlqj/2dfd4ea3b623a7c0d8deb2ff445dee9e/Consumer_Wordmark_White.svg" alt="Coinbase Wallet">
+                        <div class="wallet-info">
+                            <span class="wallet-name" data-translate="wallet-option-4-name">Coinbase Wallet</span>
+                            <span class="wallet-desc" data-translate="wallet-option-4-description">Wallet oficial Coinbase</span>
+                            <span class="wallet-status" data-translate="wallet-option-4-status">Sigur</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="loading-state hidden">
+                    <div class="spinner"></div>
+                    <p data-translate="wallet-messages-connecting">Se conectează...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="app_with_real_wallet.js"></script>
+</body>
+</html>
