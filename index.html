@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Descoperă HODLJAR - meme coin-ul cu vânătoare de comori crypto pe Solana. Participă la misiuni on-chain, câștigă airdrops și colecționează NFT-uri rare.">
+    <title>HODLJAR - Vânătoarea Comorii Crypto pe Solana | Meme Coin cu Misiuni On-Chain</title>
+
+    <!-- SEO și Social Media Meta Tags pentru Solana -->
+    <meta property="og:title" content="HODLJAR - Vânătoarea Comorii Crypto pe Solana">
+    <meta property="og:description" content="Meme coin revoluționar pe Solana cu misiuni on-chain, comisioane ultra-mici și viteza luminii">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="HODLJAR - Treasure Hunt pe Solana">
+    <meta name="twitter:description" content="Cel mai rapid meme coin cu misiuni pe Solana">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <!-- Preload important assets -->
+    <link rel="preload" href="style.css" as="style">
+    <link rel="preload" href="app_solana.js" as="script">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Chart.js pentru tokenomics -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js" defer></script>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loadingScreen" class="loading-screen hidden">
+        <div class="loading-content">
+            <div class="spinner-large"></div>
+            <h2 data-translate="interactive-loading">Se încarcă...</h2>
+            <p data-translate="interactive-pleaseWait">Te rugăm să aștepți...</p>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <!-- Brand -->
+            <div class="nav-brand">
+                <img src="https://via.placeholder.com/40x40/9945FF/14F195?text=🏴‍☠️" alt="HODLJAR Logo" class="nav-logo">
+                <h1 class="nav-title">HODLJAR</h1>
+                <span class="solana-badge" style="background: linear-gradient(90deg, #9945FF, #14F195); color: white; padding: 2px 8px; border-radius: 12px; font-size: 10px; margin-left: 8px;">SOLANA</span>
+            </div>
+
+            <!-- Navigation Links -->
+            <div class="nav-links">
+                <a href="#home" class="nav-link" data-translate="navigation-home">Acasă</a>
+                <a href="#about" class="nav-link" data-translate="navigation-about">Despre</a>
+                <a href="#tokenomics" class="nav-link" data-translate="navigation-tokenomics">Tokenomics</a>
+                <a href="#roadmap" class="nav-link" data-translate="navigation-roadmap">Roadmap</a>
+                <a href="#how-to-buy" class="nav-link" data-translate="navigation-howToBuy">Cum să Cumperi</a>
+                <a href="#community" class="nav-link" data-translate="navigation-community">Comunitate</a>
+            </div>
+
+            <!-- Actions -->
+            <div class="nav-actions">
+                <!-- Language Switcher -->
+                <div class="language-switcher">
+                    <button class="language-btn active" data-lang="ro">
+                        <span class="flag">🇷🇴</span>
+                        <span class="lang-code">RO</span>
+                    </button>
+                    <button class="language-btn" data-lang="en">
+                        <span class="flag">🇺🇸</span>
+                        <span class="lang-code">EN</span>
+                    </button>
+                    <button class="language-btn" data-lang="ru">
+                        <span class="flag">🇷🇺</span>
+                        <span class="lang-code">RU</span>
+                    </button>
+                </div>
+
+                <!-- Connect Wallet Button -->
+                <button class="btn-connect-wallet" data-translate="buttons-connectWallet">
+                    Conectează Wallet Solana
+                </button>
+
+                <!-- Social Links -->
+                <div class="social-icons">
+                    <a href="#" class="social-link" title="Twitter" aria-label="Twitter">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="social-link" title="Telegram" aria-label="Telegram">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="mobile-menu-btn" aria-label="Mobile menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-bg">
+                <div class="floating-icons">
+                    <span class="crypto-icon">⚡</span>
+                    <span class="crypto-icon">🚀</span>
+                    <span class="crypto-icon">💎</span>
+                    <span class="crypto-icon">🏴‍☠️</span>
+                    <span class="crypto-icon">⭐</span>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1 class="hero-title" data-translate="hero-title">Vânătoarea Comorii Crypto</h1>
+                        <p class="hero-subtitle" data-translate="hero-subtitle">Descoperă comorile ascunse ale bull market-ului prin misiuni on-chain și puzzle-uri interactive pe Solana</p>
+                        <p class="hero-description" data-translate="hero-description">HODLJAR nu este doar un meme coin - este o aventură gamificată pe cea mai rapidă blockchain unde fiecare deținător devine un explorator digital.</p>
+
+                        <div class="hero-actions">
+                            <button class="btn-primary" data-translate="buttons-startHunt">
+                                Începe Vânătoarea pe Solana
+                            </button>
+                            <button class="btn-outline" data-translate="buttons-seeMap">
+                                Vezi Harta Comorii
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="hero-visual">
+                        <img src="https://via.placeholder.com/400x400/9945FF/14F195?text=🏴‍☠️SOLANA" alt="HODLJAR Mascot" class="mascot-image">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about">
+            <div class="container">
+                <h2 class="section-title" data-translate="about-title">Ce este HODLJAR?</h2>
+                <p class="section-description" data-translate="about-subtitle">Un ecosistem gamificat de vânătoare de comori pe blockchain-ul Solana</p>
+
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <span class="feature-icon">⚡</span>
+                        <h3 data-translate="about-feature-1-title">Vânătoare On-Chain pe Solana</h3>
+                        <p data-translate="about-feature-1-description">Rezolvă puzzle-uri complexe și participă la misiuni cu viteza luminii și comisioane ultra-mici</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <span class="feature-icon">💎</span>
+                        <h3 data-translate="about-feature-2-title">Proof of HODL</h3>
+                        <p data-translate="about-feature-2-description">Sistemul nostru recompensează loialitatea - cu cât ții mai mult, cu atât câștigi mai mult</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <span class="feature-icon">🏴‍☠️</span>
+                        <h3 data-translate="about-feature-3-title">Artefacte NFT</h3>
+                        <p data-translate="about-feature-3-description">Colecționează NFT-uri rare pe Solana care oferă boosturi și privilegii speciale</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How to Buy Section - ACTUALIZAT PENTRU SOLANA -->
+        <section id="how-to-buy" class="how-to-buy">
+            <div class="container">
+                <h2 class="section-title" data-translate="howToBuy-title">Cum să Cumperi HJAR</h2>
+                <p class="section-description" data-translate="howToBuy-subtitle">Ghid pas cu pas pentru a te alătura vânătorilor pe Solana</p>
+
+                <div class="steps-grid">
+                    <div class="step-card">
+                        <div class="step-number" data-translate="howToBuy-step-1-number">1</div>
+                        <span class="step-icon">🦄</span>
+                        <h3 data-translate="howToBuy-step-1-title">Conectează Wallet-ul Solana</h3>
+                        <p data-translate="howToBuy-step-1-description">Folosește Phantom, Solflare, Backpack sau alt wallet compatibil cu rețeaua Solana</p>
+                        <button class="btn-primary btn-sm" data-translate="howToBuy-step-1-action">Conectează Wallet</button>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-number" data-translate="howToBuy-step-2-number">2</div>
+                        <span class="step-icon">⚡</span>
+                        <h3 data-translate="howToBuy-step-2-title">Obține SOL</h3>
+                        <p data-translate="howToBuy-step-2-description">Ai nevoie de SOL pentru comisioanele ultra-mici de pe Solana și pentru schimbul în HJAR</p>
+                        <button class="btn-outline btn-sm" data-translate="howToBuy-step-2-action">Cumpără SOL</button>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-number" data-translate="howToBuy-step-3-number">3</div>
+                        <span class="step-icon">🔄</span>
+                        <h3 data-translate="howToBuy-step-3-title">Swap pe DEX Solana</h3>
+                        <p data-translate="howToBuy-step-3-description">Mergi pe Jupiter, Raydium sau Orca și schimbă SOL pentru HJAR cu viteza luminii</p>
+                        <button class="btn-primary btn-sm" data-translate="howToBuy-step-3-action">Deschide DEX</button>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-number" data-translate="howToBuy-step-4-number">4</div>
+                        <span class="step-icon">🎉</span>
+                        <h3 data-translate="howToBuy-step-4-title">Alătură-te Comunității</h3>
+                        <p data-translate="howToBuy-step-4-description">Intră pe canalele noastre pentru misiuni exclusive, airdrops și actualizări</p>
+                        <button class="btn-outline btn-sm" data-translate="howToBuy-step-4-action">Alătură-te Acum</button>
+                    </div>
+                </div>
+
+                <!-- Warnings Section - ACTUALIZAT PENTRU SOLANA -->
+                <div class="warnings-section">
+                    <h4 data-translate="howToBuy-warnings-title">Informații Importante pentru Solana</h4>
+                    <ul class="warnings-list">
+                        <li data-translate="howToBuy-warnings-slippage">Setează slippage la 1-5% pentru tranzacții rapide și ieftine pe Solana</li>
+                        <li data-translate="howToBuy-warnings-gas">Bucură-te de comisioanele ultra-mici de pe Solana (~0.00025 SOL)</li>
+                        <li data-translate="howToBuy-warnings-scam">Verifică întotdeauna adresa contractului oficial pe Solana</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tokenomics Section -->
+        <section id="tokenomics" class="tokenomics">
+            <div class="container">
+                <h2 class="section-title" data-translate="tokenomics-title">Tokenomics - Harta Comorii</h2>
+
+                <div class="tokenomics-content">
+                    <div class="token-details">
+                        <div class="token-stat">
+                            <span class="token-label" data-translate="tokenomics-token-symbol">Simbolul Token:</span>
+                            <span class="token-value">HJAR</span>
+                        </div>
+
+                        <div class="token-stat">
+                            <span class="token-label" data-translate="tokenomics-labels-totalSupply">Oferta Totală:</span>
+                            <span class="token-value">1,000,000,000</span>
+                        </div>
+
+                        <div class="token-stat">
+                            <span class="token-label" data-translate="tokenomics-token-network">Rețeaua:</span>
+                            <span class="token-value" style="color: #14F195;">Solana ⚡</span>
+                        </div>
+
+                        <div class="token-stat">
+                            <span class="token-label" data-translate="tokenomics-labels-contractAddress">Adresa Contractului:</span>
+                            <span class="token-value contract-address" title="Click pentru copiere">SoLaNa...AbCdEf</span>
+                        </div>
+
+                        <div class="token-burn">
+                            <span class="burn-label" data-translate="tokenomics-mechanism-burn">🔥 1% Burn la evenimente de raid</span>
+                            <span class="burn-description" data-translate="tokenomics-mechanism-rewards">2% Redistribuire către holderi pe Solana</span>
+                        </div>
+
+                        <div class="token-actions">
+                            <button class="btn-primary btn-sm" data-translate="tokenomics-labels-addToWallet">Adaugă în Wallet</button>
+                            <button class="btn-outline btn-sm" data-translate="tokenomics-labels-viewOnExplorer">Vezi pe Solana Explorer</button>
+                        </div>
+                    </div>
+
+                    <div class="chart-container">
+                        <canvas id="tokenomicsChart" width="400" height="400"></canvas>
+                    </div>
+                </div>
+
+                <div class="tokenomics-legend">
+                    <div class="legend-item">
+                        <div class="legend-color" style="background-color: #9945FF;"></div>
+                        <span data-translate="tokenomics-distribution-community">40% Community Rewards & Misiuni</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background-color: #14F195;"></div>
+                        <span data-translate="tokenomics-distribution-liquidity">30% Lichiditate & Listare Exchanges</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background-color: #B4413C;"></div>
+                        <span data-translate="tokenomics-distribution-team">15% Echipa (blocat 12 luni)</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background-color: #ECEBD5;"></div>
+                        <span data-translate="tokenomics-distribution-marketing">10% Marketing & Partnerships</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background-color: #5D878F;"></div>
+                        <span data-translate="tokenomics-distribution-treasury">5% Trezorerie & Dezvoltare</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Community Section -->
+        <section id="community" class="community">
+            <div class="container">
+                <h2 class="section-title" data-translate="community-title">Alătură-te Expedițiunii pe Solana</h2>
+                <p class="section-description" data-translate="community-description">Peste 15.000 de vânători de comori s-au alăturat deja misiunii noastre pe Solana. Fii parte din istoria crypto!</p>
+
+                <div class="community-stats">
+                    <div class="stat-card">
+                        <span class="stat-number" data-target="15420">0</span>
+                        <span class="stat-label" data-translate="community-stats-members">Membri Comunitate</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number" data-target="8750">0</span>
+                        <span class="stat-label" data-translate="community-stats-holders">Deținători Token</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number" data-target="127">0</span>
+                        <span class="stat-label" data-translate="community-stats-treasures">Comori Găsite</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number" data-target="2500000">0</span>
+                        <span class="stat-label" data-translate="community-stats-rewards">Recompense Distribuite (SOL)</span>
+                    </div>
+                </div>
+
+                <div class="community-links">
+                    <a href="#" class="community-link">
+                        <div class="community-icon">📱</div>
+                        <div class="community-info">
+                            <h3 data-translate="community-platforms-telegram-title">Telegram</h3>
+                            <span data-translate="community-platforms-telegram-description">Chat principal și anunțuri oficiale</span>
+                            <span class="member-count">12,450+ membri</span>
+                        </div>
+                    </a>
+
+                    <a href="#" class="community-link">
+                        <div class="community-icon">🎮</div>
+                        <div class="community-info">
+                            <h3 data-translate="community-platforms-discord-title">Discord</h3>
+                            <span data-translate="community-platforms-discord-description">Comunitatea gamers și evenimente pe Solana</span>
+                            <span class="member-count">8,750+ membri</span>
+                        </div>
+                    </a>
+
+                    <a href="#" class="community-link">
+                        <div class="community-icon">🐦</div>
+                        <div class="community-info">
+                            <h3 data-translate="community-platforms-twitter-title">Twitter/X</h3>
+                            <span data-translate="community-platforms-twitter-description">Actualizări zilnice despre Solana</span>
+                            <span class="member-count">25,300+ urmăritori</span>
+                        </div>
+                    </a>
+
+                    <a href="#" class="community-link">
+                        <div class="community-icon">🤖</div>
+                        <div class="community-info">
+                            <h3 data-translate="community-platforms-reddit-title">Reddit</h3>
+                            <span data-translate="community-platforms-reddit-description">Discuții și analiza comunității Solana</span>
+                            <span class="member-count">5,650+ membri</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="https://via.placeholder.com/50x50/9945FF/14F195?text=🏴‍☠️" alt="HODLJAR Logo" class="footer-logo">
+                    <h3>HODLJAR <span style="color: #14F195;">on Solana</span></h3>
+                    <p>Vânătoarea comorilor crypto pe cea mai rapidă blockchain din lume.</p>
+                </div>
+
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h4>Linkuri Rapide</h4>
+                        <a href="#about" data-translate="navigation-about">Despre</a>
+                        <a href="#tokenomics" data-translate="navigation-tokenomics">Tokenomics</a>
+                        <a href="#how-to-buy" data-translate="navigation-howToBuy">Cum să Cumperi</a>
+                        <a href="#community" data-translate="navigation-community">Comunitate</a>
+                    </div>
+
+                    <div class="footer-section">
+                        <h4>Resurse Solana</h4>
+                        <a href="#" data-translate="footer-links-audit">Raport Audit</a>
+                        <a href="#" data-translate="footer-links-documentation">Documentație</a>
+                        <a href="#">Solana Explorer</a>
+                        <a href="#">Jupiter Exchange</a>
+                    </div>
+
+                    <div class="footer-section">
+                        <h4>Legal</h4>
+                        <a href="#" data-translate="footer-links-terms">Termeni și Condiții</a>
+                        <a href="#" data-translate="footer-links-privacy">Politica de Confidențialitate</a>
+                        <a href="#" data-translate="footer-links-legal">Legal</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p data-translate="footer-copyright">© 2025 HODLJAR pe Solana. Toate drepturile rezervate.</p>
+                <p class="disclaimer" data-translate="footer-disclaimer">Investițiile în criptomonede implică riscuri semnificative. Prețurile pot fluctua dramatic și poți pierde toți banii investiți. Investește doar ce îți permiți să pierzi și consultă un consilier financiar înainte de orice decizie de investiție.</p>
+                <button class="back-to-top" data-translate="footer-backToTop">Înapoi Sus</button>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Wallet Connection Modal - ACTUALIZAT PENTRU SOLANA -->
+    <div id="walletModal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 data-translate="wallet-title">Conectează Wallet-ul Solana</h3>
+                <button class="modal-close" aria-label="Close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p class="modal-subtitle" data-translate="wallet-subtitle">Alege wallet-ul tău preferat pentru Solana</p>
+
+                <div class="wallet-options">
+                    <button class="wallet-option" data-wallet="phantom">
+                        <img src="https://via.placeholder.com/32x32/AB9FF2/FFFFFF?text=P" alt="Phantom">
+                        <div class="wallet-info">
+                            <span class="wallet-name" data-translate="wallet-option-1-name">Phantom</span>
+                            <span class="wallet-desc" data-translate="wallet-option-1-description">Wallet-ul cel mai popular pentru ecosistemul Solana</span>
+                            <span class="wallet-status" data-translate="wallet-option-1-status">Recomandat</span>
+                        </div>
+                    </button>
+
+                    <button class="wallet-option" data-wallet="solflare">
+                        <img src="https://via.placeholder.com/32x32/FFC947/FFFFFF?text=S" alt="Solflare">
+                        <div class="wallet-info">
+                            <span class="wallet-name" data-translate="wallet-option-2-name">Solflare</span>
+                            <span class="wallet-desc" data-translate="wallet-option-2-description">Wallet premium cu funcții avansate pentru Solana</span>
+                            <span class="wallet-status" data-translate="wallet-option-2-status">Popular</span>
+                        </div>
+                    </button>
+
+                    <button class="wallet-option" data-wallet="backpack">
+                        <img src="https://via.placeholder.com/32x32/E33E7F/FFFFFF?text=B" alt="Backpack">
+                        <div class="wallet-info">
+                            <span class="wallet-name" data-translate="wallet-option-3-name">Backpack</span>
+                            <span class="wallet-desc" data-translate="wallet-option-3-description">Wallet modern cu suport complet pentru Solana</span>
+                            <span class="wallet-status" data-translate="wallet-option-3-status">Nou</span>
+                        </div>
+                    </button>
+
+                    <button class="wallet-option" data-wallet="sollet">
+                        <img src="https://via.placeholder.com/32x32/00D4AA/FFFFFF?text=S" alt="Sollet">
+                        <div class="wallet-info">
+                            <span class="wallet-name" data-translate="wallet-option-4-name">Sollet</span>
+                            <span class="wallet-desc" data-translate="wallet-option-4-description">Wallet web pentru accesul rapid la Solana</span>
+                            <span class="wallet-status" data-translate="wallet-option-4-status">Simplu</span>
+                        </div>
+                    </button>
+                </div>
+
+                <div class="loading-state hidden">
+                    <div class="spinner"></div>
+                    <p data-translate="wallet-messages-connecting">Se conectează la Solana...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="app_solana.js"></script>
+</body>
+</html>
